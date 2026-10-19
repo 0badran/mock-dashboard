@@ -562,7 +562,6 @@ export default function HallLayoutsPage() {
 													/>
 													<Button
 														type="submit"
-														size="sm"
 														className="rounded-xl shrink-0"
 													>
 														<UserPlus className="size-3.5" />
@@ -591,7 +590,7 @@ export default function HallLayoutsPage() {
 																</span>
 																<Button
 																	variant="ghost"
-																	size="icon-xs"
+																	size="icon"
 																	onClick={() =>
 																		handleRemoveGuestFromTable(name)
 																	}
@@ -618,7 +617,6 @@ export default function HallLayoutsPage() {
 					<DialogFooter>
 						<Button
 							variant="outline"
-							size="lg"
 							onClick={() => setSelectedLayout(null)}
 						>
 							{t("common.close")}

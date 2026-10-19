@@ -114,7 +114,7 @@ export default function MemoriesPage() {
                 />
                 <Button
                   variant="destructive"
-                  size="icon-xs"
+                  size="icon"
                   onClick={() => handleDeletePrompt(mem)}
                   className="absolute top-2 inset-e-2 opacity-0 group-hover:opacity-100 transition-opacity"
                 >
@@ -167,10 +167,10 @@ export default function MemoriesPage() {
               />
             </div>
             <DialogFooter className="gap-3 sm:gap-3 pt-2">
-              <Button type="button" variant="outline" size="lg" onClick={() => setModalOpen(false)}>
+              <Button type="button" variant="outline" onClick={() => setModalOpen(false)}>
                 {t("common.cancel")}
               </Button>
-              <Button size="lg" type="submit">
+              <Button type="submit">
                 {t("common.save")}
               </Button>
             </DialogFooter>

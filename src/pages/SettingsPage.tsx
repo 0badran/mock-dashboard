@@ -75,7 +75,7 @@ export default function SettingsPage() {
                 <p className="text-xs text-muted-foreground capitalize">{theme}</p>
               </div>
             </div>
-            <Button variant="outline" size="sm" onClick={toggleTheme} className="text-xs">
+            <Button variant="outline" onClick={toggleTheme} className="text-xs">
               {t("common.toggleTheme")}
             </Button>
           </div>
@@ -93,7 +93,6 @@ export default function SettingsPage() {
             <div className="flex items-center gap-1.5">
               <Button
                 variant={language === "ar" ? "default" : "outline"}
-                size="xs"
                 onClick={() => setLanguage("ar")}
                 className="text-xs"
               >
@@ -101,7 +100,6 @@ export default function SettingsPage() {
               </Button>
               <Button
                 variant={language === "en" ? "default" : "outline"}
-                size="xs"
                 onClick={() => setLanguage("en")}
                 className="text-xs"
               >

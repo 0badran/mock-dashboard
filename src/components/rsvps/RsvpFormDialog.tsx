@@ -158,12 +158,11 @@ export const RsvpFormDialog: React.FC<RsvpFormDialogProps> = ({
 						<Button
 							type="button"
 							variant="outline"
-							size="lg"
 							onClick={() => onOpenChange(false)}
 						>
 							{t("common.cancel")}
 						</Button>
-						<Button size="lg" type="submit">
+						<Button type="submit">
 							{t("common.save")}
 						</Button>
 					</DialogFooter>

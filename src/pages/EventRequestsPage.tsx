@@ -428,7 +428,7 @@ export default function EventRequestsPage() {
 												{req.rejectionReason && (
 													<Button
 														variant="ghost"
-														size="icon-xs"
+														size="icon"
 														onClick={() =>
 															setActiveRejectionView(req.rejectionReason || "")
 														}
@@ -443,7 +443,7 @@ export default function EventRequestsPage() {
 										<TableCell>
 											<div className="flex items-center justify-center gap-1">
 												<Button
-													size="icon-xs"
+													size="icon"
 													variant="ghost"
 													onClick={() => setViewingRequest(req)}
 													title={t("eventRequests.details")}
@@ -454,7 +454,7 @@ export default function EventRequestsPage() {
 												{req.status === "pending" && (
 													<>
 														<Button
-															size="icon-xs"
+															size="icon"
 															variant="ghost"
 															onClick={() => handleApprovePrompt(req)}
 															title={t("eventRequests.approve")}
@@ -464,7 +464,7 @@ export default function EventRequestsPage() {
 														</Button>
 
 														<Button
-															size="icon-xs"
+															size="icon"
 															variant="ghost"
 															onClick={() => handleOpenReject(req)}
 															title={t("eventRequests.reject")}
@@ -476,7 +476,7 @@ export default function EventRequestsPage() {
 												)}
 
 												<Button
-													size="icon-xs"
+													size="icon"
 													variant="ghost"
 													onClick={() => handleDeletePrompt(req)}
 													title={t("common.delete")}
@@ -617,12 +617,11 @@ export default function EventRequestsPage() {
 							<Button
 								type="button"
 								variant="outline"
-								size="lg"
 								onClick={() => setCreateModalOpen(false)}
 							>
 								{t("common.cancel")}
 							</Button>
-							<Button size="lg" type="submit">
+							<Button type="submit">
 								{t("common.save")}
 							</Button>
 						</DialogFooter>
@@ -715,7 +714,6 @@ export default function EventRequestsPage() {
 					<DialogFooter>
 						<Button
 							variant="outline"
-							size="lg"
 							onClick={() => setViewingRequest(null)}
 						>
 							{t("common.close")}
@@ -751,12 +749,11 @@ export default function EventRequestsPage() {
 							<Button
 								type="button"
 								variant="outline"
-								size="lg"
 								onClick={() => setRejectingRequest(null)}
 							>
 								{t("common.cancel")}
 							</Button>
-							<Button size="lg" type="submit" variant="destructive">
+							<Button type="submit" variant="destructive">
 								{t("eventRequests.reject")}
 							</Button>
 						</DialogFooter>
@@ -782,7 +779,6 @@ export default function EventRequestsPage() {
 					<DialogFooter>
 						<Button
 							variant="outline"
-							size="lg"
 							onClick={() => setActiveRejectionView(null)}
 						>
 							{t("common.close")}

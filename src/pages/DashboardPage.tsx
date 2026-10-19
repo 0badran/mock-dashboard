@@ -485,7 +485,7 @@ export default function DashboardPage() {
 									أحدث المناسبات المسجلة وحالات الحضور
 								</CardDescription>
 							</div>
-							<Button asChild variant="ghost" size="sm">
+							<Button asChild variant="ghost">
 								<Link
 									to="/events"
 									className="gap-1 text-xs text-primary font-semibold"
@@ -689,7 +689,6 @@ export default function DashboardPage() {
 							<Button
 								asChild
 								variant="outline"
-								size="sm"
 								className="h-auto py-2.5 flex flex-col gap-1 rounded-2xl"
 							>
 								<Link to="/guests">
@@ -700,7 +699,6 @@ export default function DashboardPage() {
 							<Button
 								asChild
 								variant="outline"
-								size="sm"
 								className="h-auto py-2.5 flex flex-col gap-1 rounded-2xl"
 							>
 								<Link to="/events">
@@ -713,7 +711,6 @@ export default function DashboardPage() {
 							<Button
 								asChild
 								variant="outline"
-								size="sm"
 								className="h-auto py-2.5 flex flex-col gap-1 rounded-2xl"
 							>
 								<Link to="/notify-broadcasts">
@@ -726,7 +723,6 @@ export default function DashboardPage() {
 							<Button
 								asChild
 								variant="outline"
-								size="sm"
 								className="h-auto py-2.5 flex flex-col gap-1 rounded-2xl"
 							>
 								<Link to="/settings">

@@ -187,10 +187,10 @@ export default function NotesPage() {
               <div className="pt-3 mt-4 border-t border-border/40 flex items-center justify-between text-xs text-muted-foreground">
                 <span>{note.date}</span>
                 <div className="flex items-center gap-1">
-                  <Button variant="ghost" size="icon-xs" onClick={() => handleOpenEdit(note)}>
+                  <Button variant="ghost" size="icon" onClick={() => handleOpenEdit(note)}>
                     <Edit2 className="size-3.5" />
                   </Button>
-                  <Button variant="ghost" size="icon-xs" onClick={() => handleDeletePrompt(note)}>
+                  <Button variant="ghost" size="icon" onClick={() => handleDeletePrompt(note)}>
                     <Trash2 className="size-3.5 text-rose-500" />
                   </Button>
                 </div>
@@ -247,10 +247,10 @@ export default function NotesPage() {
               />
             </div>
             <DialogFooter className="gap-3 sm:gap-3 pt-2">
-              <Button type="button" variant="outline" size="lg" onClick={() => setModalOpen(false)}>
+              <Button type="button" variant="outline" onClick={() => setModalOpen(false)}>
                 {t("common.cancel")}
               </Button>
-              <Button size="lg" type="submit">
+              <Button type="submit">
                 {t("common.save")}
               </Button>
             </DialogFooter>

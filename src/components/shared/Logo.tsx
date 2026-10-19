@@ -39,17 +39,13 @@ const Logo = ({
 				<span
 					className={cn(
 						"relative z-10 flex h-10 w-[min(100%,11rem)] shrink-0 items-center justify-center sm:h-11 sm:w-[min(100%,12.5rem)]",
-						frame &&
-							cn(
-								"rounded-lg bg-white px-1.5 py-1",
-								frameClassName,
-							),
+						frame && cn("rounded-lg px-1.5 py-1", frameClassName),
 					)}
 				>
 					<img
 						src={logoUrl}
 						alt={SITE_NAME}
-						className="size-full object-contain object-center"
+						className="size-full object-contain object-center dark:invert"
 					/>
 				</span>
 				{showName ? (

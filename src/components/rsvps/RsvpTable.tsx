@@ -125,7 +125,7 @@ export const RsvpTable: React.FC<RsvpTableProps> = ({
 										<div className="flex items-center justify-end gap-1">
 											<Button
 												variant="ghost"
-												size="icon-xs"
+												size="icon"
 												onClick={() => onSelectView(rsvp)}
 												title={t("rsvps.rsvpDetails")}
 											>
@@ -133,7 +133,7 @@ export const RsvpTable: React.FC<RsvpTableProps> = ({
 											</Button>
 											<Button
 												variant="ghost"
-												size="icon-xs"
+												size="icon"
 												onClick={() => onSelectEdit(rsvp)}
 												title={t("rsvps.editRsvp")}
 											>
@@ -141,7 +141,7 @@ export const RsvpTable: React.FC<RsvpTableProps> = ({
 											</Button>
 											<Button
 												variant="ghost"
-												size="icon-xs"
+												size="icon"
 												onClick={() => onDelete(rsvp)}
 												title={t("common.delete")}
 											>

@@ -292,7 +292,6 @@ export default function CheckInPage() {
 										</div>
 
 										<Button
-											size="xs"
 											onClick={() => handleCheckIn(attendee)}
 											className="gap-1.5 rounded-xl font-bold shrink-0"
 										>
@@ -370,7 +369,6 @@ export default function CheckInPage() {
 										</div>
 
 										<Button
-											size="xs"
 											variant="outline"
 											onClick={() => handleCancelCheckIn(attendee)}
 											className="gap-1.5 rounded-xl text-xs hover:border-rose-500/40 hover:text-rose-600 shrink-0"

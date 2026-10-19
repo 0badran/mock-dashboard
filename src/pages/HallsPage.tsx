@@ -303,7 +303,6 @@ export default function HallsPage() {
 									<div className="flex items-center justify-between pt-2 border-t border-border/50 mt-1">
 										<Button
 											variant="outline"
-											size="xs"
 											onClick={() => handleOpenLayout(hall)}
 											className="gap-1.5 text-xs text-primary hover:bg-primary/10"
 										>
@@ -314,7 +313,7 @@ export default function HallsPage() {
 										<div className="flex items-center gap-1">
 											<Button
 												variant="ghost"
-												size="icon-xs"
+												size="icon"
 												onClick={() => handleOpenEdit(hall)}
 												title={t("common.edit")}
 											>
@@ -322,7 +321,7 @@ export default function HallsPage() {
 											</Button>
 											<Button
 												variant="ghost"
-												size="icon-xs"
+												size="icon"
 												onClick={() => handleDeletePrompt(hall)}
 												title={t("common.delete")}
 											>
@@ -461,12 +460,11 @@ export default function HallsPage() {
 							<Button
 								type="button"
 								variant="outline"
-								size="lg"
 								onClick={() => setModalOpen(false)}
 							>
 								{t("common.cancel")}
 							</Button>
-							<Button size="lg" type="submit">
+							<Button type="submit">
 								{t("common.save")}
 							</Button>
 						</DialogFooter>
@@ -559,7 +557,6 @@ export default function HallsPage() {
 					<DialogFooter>
 						<Button
 							variant="outline"
-							size="lg"
 							onClick={() => setLayoutModalOpen(false)}
 						>
 							{t("common.close")}

@@ -235,14 +235,14 @@ export default function AdminAssistantsPage() {
                     <div className="flex items-center justify-end gap-1">
                       <Button
                         variant="ghost"
-                        size="icon-xs"
+                        size="icon"
                         onClick={() => handleOpenEdit(ast)}
                       >
                         <Edit2 className="size-3.5" />
                       </Button>
                       <Button
                         variant="ghost"
-                        size="icon-xs"
+                        size="icon"
                         onClick={() => handleDeletePrompt(ast)}
                       >
                         <Trash2 className="size-3.5 text-rose-500" />
@@ -292,10 +292,10 @@ export default function AdminAssistantsPage() {
               />
             </div>
             <DialogFooter className="gap-3 sm:gap-3 pt-2">
-              <Button type="button" variant="outline" size="lg" onClick={() => setModalOpen(false)}>
+              <Button type="button" variant="outline" onClick={() => setModalOpen(false)}>
                 {t("common.cancel")}
               </Button>
-              <Button size="lg" type="submit">
+              <Button type="submit">
                 {t("common.save")}
               </Button>
             </DialogFooter>

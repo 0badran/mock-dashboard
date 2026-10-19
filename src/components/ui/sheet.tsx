@@ -71,7 +71,7 @@ function SheetContent({
             <Button
               variant="ghost"
               className="absolute top-3 inset-e-3"
-              size="icon-sm"
+              size="icon"
             >
               <XIcon
               />

@@ -345,7 +345,7 @@ export default function ClientsPage() {
 											<div className="flex items-center justify-end gap-1">
 												<Button
 													variant="ghost"
-													size="icon-xs"
+													size="icon"
 													onClick={() => handleOpenEdit(client)}
 													title={t("clients.editClient")}
 												>
@@ -353,7 +353,7 @@ export default function ClientsPage() {
 												</Button>
 												<Button
 													variant="ghost"
-													size="icon-xs"
+													size="icon"
 													onClick={() => handleDeletePrompt(client)}
 													title={t("common.delete")}
 												>
@@ -489,12 +489,11 @@ export default function ClientsPage() {
 							<Button
 								type="button"
 								variant="outline"
-								size="lg"
 								onClick={() => setModalOpen(false)}
 							>
 								{t("common.cancel")}
 							</Button>
-							<Button size="lg" type="submit">
+							<Button type="submit">
 								{t("common.save")}
 							</Button>
 						</DialogFooter>

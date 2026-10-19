@@ -180,7 +180,7 @@ export default function BroadcastsPage() {
                   <span>•</span>
                   <span>{b.sentDate}</span>
                 </div>
-                <Button variant="ghost" size="icon-xs" onClick={() => handleDeletePrompt(b)}>
+                <Button variant="ghost" size="icon" onClick={() => handleDeletePrompt(b)}>
                   <Trash2 className="size-3.5 text-rose-500" />
                 </Button>
               </div>
@@ -231,10 +231,10 @@ export default function BroadcastsPage() {
               />
             </div>
             <DialogFooter className="gap-3 sm:gap-3 pt-2">
-              <Button type="button" variant="outline" size="lg" onClick={() => setModalOpen(false)}>
+              <Button type="button" variant="outline" onClick={() => setModalOpen(false)}>
                 {t("common.cancel")}
               </Button>
-              <Button size="lg" type="submit">
+              <Button type="submit">
                 {t("common.save")}
               </Button>
             </DialogFooter>

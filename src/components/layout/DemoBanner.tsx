@@ -22,7 +22,7 @@ export function DemoBanner({ onDismiss }: DemoBannerProps) {
 			{onDismiss && (
 				<Button
 					variant="ghost"
-					size="icon-xs"
+					size="icon"
 					onClick={onDismiss}
 					title={t("common.close")}
 					className="shrink-0"

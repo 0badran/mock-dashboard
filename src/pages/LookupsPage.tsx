@@ -315,7 +315,7 @@ export default function LookupsPage() {
             {t("lookups.subtitle")}
           </p>
         </div>
-        <Button onClick={handleAddClick} size="default" className="gap-2">
+        <Button onClick={handleAddClick} className="gap-2">
           <Plus className="size-4" />
           <span>{t("lookups.addLookup")}</span>
         </Button>
@@ -593,7 +593,7 @@ export default function LookupsPage() {
                       <TableCell className="text-end" onClick={(e) => e.stopPropagation()}>
                         <DropdownMenu>
                           <DropdownMenuTrigger asChild>
-                            <Button variant="ghost" size="icon-xs">
+                            <Button variant="ghost" size="icon">
                               <MoreHorizontal className="size-4" />
                             </Button>
                           </DropdownMenuTrigger>
@@ -811,14 +811,12 @@ export default function LookupsPage() {
                 <Button
                   type="button"
                   variant="outline"
-                  size="lg"
                   onClick={() => setIsDetailsOpen(false)}
                 >
                   {t("common.close")}
                 </Button>
                 <Button
                   type="button"
-                  size="lg"
                   onClick={() => {
                     setIsDetailsOpen(false);
                     handleEditClick(detailLookup);
@@ -1013,12 +1011,11 @@ export default function LookupsPage() {
               <Button
                 type="button"
                 variant="outline"
-                size="lg"
                 onClick={() => setIsDialogOpen(false)}
               >
                 {t("common.cancel")}
               </Button>
-              <Button size="lg" type="submit">
+              <Button type="submit">
                 {t("common.save")}
               </Button>
             </DialogFooter>

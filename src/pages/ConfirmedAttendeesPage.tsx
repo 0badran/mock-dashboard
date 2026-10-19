@@ -286,7 +286,6 @@ export default function ConfirmedAttendeesPage() {
 											<div className="flex items-center justify-end gap-1.5">
 												<Button
 													variant={att.checkedIn ? "outline" : "default"}
-													size="xs"
 													onClick={() => toggleCheckIn(att)}
 													className="gap-1 text-xs"
 												>
@@ -303,7 +302,7 @@ export default function ConfirmedAttendeesPage() {
 												</Button>
 												<Button
 													variant="ghost"
-													size="icon-xs"
+													size="icon"
 													onClick={() => handleDeletePrompt(att)}
 													title={t("common.delete")}
 												>
@@ -347,12 +346,11 @@ export default function ConfirmedAttendeesPage() {
 							<Button
 								type="button"
 								variant="outline"
-								size="lg"
 								onClick={() => setModalOpen(false)}
 							>
 								{t("common.cancel")}
 							</Button>
-							<Button size="lg" type="submit">
+							<Button type="submit">
 								{t("common.save")}
 							</Button>
 						</DialogFooter>

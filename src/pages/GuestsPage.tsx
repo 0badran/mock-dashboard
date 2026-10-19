@@ -378,7 +378,7 @@ export default function GuestsPage() {
 											<div className="flex items-center justify-end gap-1">
 												<Button
 													variant="ghost"
-													size="icon-xs"
+													size="icon"
 													onClick={() => setViewingGuest(guest)}
 													title={t("guests.guestDetails")}
 												>
@@ -386,7 +386,7 @@ export default function GuestsPage() {
 												</Button>
 												<Button
 													variant="ghost"
-													size="icon-xs"
+													size="icon"
 													onClick={() => handleOpenEdit(guest)}
 													title={t("guests.editGuest")}
 												>
@@ -394,7 +394,7 @@ export default function GuestsPage() {
 												</Button>
 												<Button
 													variant="ghost"
-													size="icon-xs"
+													size="icon"
 													onClick={() => handleDeletePrompt(guest)}
 													title={t("guests.deleteGuest")}
 												>
@@ -492,7 +492,7 @@ export default function GuestsPage() {
 							</div>
 
 							<DialogFooter className="pt-2">
-								<Button variant="outline" size="lg" onClick={() => setViewingGuest(null)}>
+								<Button variant="outline" onClick={() => setViewingGuest(null)}>
 									{t("common.close")}
 								</Button>
 							</DialogFooter>
@@ -569,12 +569,11 @@ export default function GuestsPage() {
 							<Button
 								type="button"
 								variant="outline"
-								size="lg"
 								onClick={() => setModalOpen(false)}
 							>
 								{t("common.cancel")}
 							</Button>
-							<Button size="lg" type="submit">
+							<Button type="submit">
 								{t("common.save")}
 							</Button>
 						</DialogFooter>

@@ -121,7 +121,6 @@ export const RsvpDetailsDialog: React.FC<RsvpDetailsDialogProps> = ({
 				<DialogFooter>
 					<Button
 						variant="outline"
-						size="lg"
 						onClick={() => onOpenChange(false)}
 						className="w-full sm:w-auto"
 					>

@@ -367,7 +367,6 @@ export default function InvitationsPage() {
 									<div className="flex items-center justify-between pt-2 border-t border-border/50">
 										<Button
 											variant="outline"
-											size="xs"
 											onClick={() => handlePreview(tpl)}
 											className="gap-1.5 text-xs text-primary hover:bg-primary/10"
 										>
@@ -378,7 +377,7 @@ export default function InvitationsPage() {
 										<div className="flex items-center gap-1">
 											<Button
 												variant="ghost"
-												size="icon-xs"
+												size="icon"
 												onClick={() => handleOpenEdit(tpl)}
 												title={t("common.edit")}
 											>
@@ -386,7 +385,7 @@ export default function InvitationsPage() {
 											</Button>
 											<Button
 												variant="ghost"
-												size="icon-xs"
+												size="icon"
 												onClick={() => handleDeletePrompt(tpl)}
 												title={t("common.delete")}
 											>
@@ -534,12 +533,11 @@ export default function InvitationsPage() {
 							<Button
 								type="button"
 								variant="outline"
-								size="lg"
 								onClick={() => setModalOpen(false)}
 							>
 								{t("common.cancel")}
 							</Button>
-							<Button size="lg" type="submit">
+							<Button type="submit">
 								{t("common.save")}
 							</Button>
 						</DialogFooter>
@@ -603,7 +601,6 @@ export default function InvitationsPage() {
 								</div>
 
 								<Button
-									size="lg"
 									className="w-full rounded-xl gap-2 font-bold"
 									onClick={() => setPreviewModalOpen(false)}
 								>

@@ -21,16 +21,8 @@ const buttonVariants = cva(
       },
       size: {
         default:
-          "h-8 md:h-9 lg:h-10 gap-1.5 px-3 has-data-[icon=inline-end]:pe-2.5 has-data-[icon=inline-start]:ps-2.5",
-        xs: "h-6 gap-1 px-2 text-xs has-data-[icon=inline-end]:pe-1.5 has-data-[icon=inline-start]:ps-1.5 [&_svg:not([class*='size-'])]:size-3",
-        sm: "h-7 gap-1 px-2.5 text-[0.8rem] has-data-[icon=inline-end]:pe-1.5 has-data-[icon=inline-start]:ps-1.5 [&_svg:not([class*='size-'])]:size-3.5",
-        md: "h-9 gap-2 px-4 text-sm font-medium min-w-20 rounded-lg",
-        lg: "h-10 gap-2 px-6 text-sm font-medium min-w-24 rounded-lg",
-        xl: "h-11 gap-2.5 px-7 text-base font-semibold min-w-28 rounded-xl",
-        icon: "size-8 md:size-9 lg:size-10 rounded-xl",
-        "icon-xs": "size-6 rounded-md [&_svg:not([class*='size-'])]:size-3",
-        "icon-sm": "size-7 rounded-lg",
-        "icon-lg": "size-9 rounded-xl",
+          "h-9 md:h-10 gap-2 px-4 text-sm font-medium rounded-lg has-data-[icon=inline-end]:pe-3 has-data-[icon=inline-start]:ps-3",
+        icon: "size-8 md:size-9 rounded-lg",
       },
     },
     defaultVariants: {

@@ -248,7 +248,7 @@ export default function EventsPage() {
 							<div className="flex items-center justify-end gap-1.5 pt-2 border-t border-border/40">
 								<Button
 									variant="ghost"
-									size="icon-xs"
+									size="icon"
 									onClick={() => handleOpenEdit(evt)}
 									title={t("events.editEvent")}
 								>
@@ -256,7 +256,7 @@ export default function EventsPage() {
 								</Button>
 								<Button
 									variant="ghost"
-									size="icon-xs"
+									size="icon"
 									onClick={() => handleDeletePrompt(evt)}
 									title={t("common.delete")}
 								>
@@ -385,12 +385,11 @@ export default function EventsPage() {
 							<Button
 								type="button"
 								variant="outline"
-								size="lg"
 								onClick={() => setModalOpen(false)}
 							>
 								{t("common.cancel")}
 							</Button>
-							<Button size="lg" type="submit">
+							<Button type="submit">
 								{t("common.save")}
 							</Button>
 						</DialogFooter>
