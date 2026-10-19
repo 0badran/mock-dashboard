@@ -613,15 +613,18 @@ export default function EventRequestsPage() {
 							/>
 						</div>
 
-						<DialogFooter className="gap-2 sm:gap-0 pt-2">
+						<DialogFooter className="gap-3 sm:gap-3 pt-2">
 							<Button
 								type="button"
 								variant="outline"
+								size="lg"
 								onClick={() => setCreateModalOpen(false)}
 							>
 								{t("common.cancel")}
 							</Button>
-							<Button type="submit">{t("common.save")}</Button>
+							<Button size="lg" type="submit">
+								{t("common.save")}
+							</Button>
 						</DialogFooter>
 					</form>
 				</DialogContent>
@@ -712,6 +715,7 @@ export default function EventRequestsPage() {
 					<DialogFooter>
 						<Button
 							variant="outline"
+							size="lg"
 							onClick={() => setViewingRequest(null)}
 						>
 							{t("common.close")}
@@ -743,15 +747,16 @@ export default function EventRequestsPage() {
 							onChange={(e) => setRejectionReasonText(e.target.value)}
 							placeholder={t("eventRequests.rejectionReasonPlaceholder")}
 						/>
-						<DialogFooter className="gap-2 sm:gap-0 pt-2">
+						<DialogFooter className="gap-3 sm:gap-3 pt-2">
 							<Button
 								type="button"
 								variant="outline"
+								size="lg"
 								onClick={() => setRejectingRequest(null)}
 							>
 								{t("common.cancel")}
 							</Button>
-							<Button type="submit" variant="destructive">
+							<Button size="lg" type="submit" variant="destructive">
 								{t("eventRequests.reject")}
 							</Button>
 						</DialogFooter>
@@ -777,6 +782,7 @@ export default function EventRequestsPage() {
 					<DialogFooter>
 						<Button
 							variant="outline"
+							size="lg"
 							onClick={() => setActiveRejectionView(null)}
 						>
 							{t("common.close")}

@@ -457,15 +457,18 @@ export default function HallsPage() {
 							/>
 						</div>
 
-						<DialogFooter className="gap-2 sm:gap-0 pt-2">
+						<DialogFooter className="gap-3 sm:gap-3 pt-2">
 							<Button
 								type="button"
 								variant="outline"
+								size="lg"
 								onClick={() => setModalOpen(false)}
 							>
 								{t("common.cancel")}
 							</Button>
-							<Button type="submit">{t("common.save")}</Button>
+							<Button size="lg" type="submit">
+								{t("common.save")}
+							</Button>
 						</DialogFooter>
 					</form>
 				</DialogContent>
@@ -556,6 +559,7 @@ export default function HallsPage() {
 					<DialogFooter>
 						<Button
 							variant="outline"
+							size="lg"
 							onClick={() => setLayoutModalOpen(false)}
 						>
 							{t("common.close")}

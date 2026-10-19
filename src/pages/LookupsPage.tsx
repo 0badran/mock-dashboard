@@ -807,16 +807,18 @@ export default function LookupsPage() {
               </div>
 
               {/* Dialog Footer Actions */}
-              <DialogFooter className="gap-2 sm:gap-0 pt-2 border-t">
+              <DialogFooter className="gap-3 sm:gap-3 pt-2 border-t">
                 <Button
                   type="button"
                   variant="outline"
+                  size="lg"
                   onClick={() => setIsDetailsOpen(false)}
                 >
                   {t("common.close")}
                 </Button>
                 <Button
                   type="button"
+                  size="lg"
                   onClick={() => {
                     setIsDetailsOpen(false);
                     handleEditClick(detailLookup);
@@ -1007,15 +1009,18 @@ export default function LookupsPage() {
               </label>
             </div>
 
-            <DialogFooter className="gap-2 sm:gap-0 pt-3 border-t">
+            <DialogFooter className="gap-3 sm:gap-3 pt-3 border-t">
               <Button
                 type="button"
                 variant="outline"
+                size="lg"
                 onClick={() => setIsDialogOpen(false)}
               >
                 {t("common.cancel")}
               </Button>
-              <Button type="submit">{t("common.save")}</Button>
+              <Button size="lg" type="submit">
+                {t("common.save")}
+              </Button>
             </DialogFooter>
           </form>
         </DialogContent>

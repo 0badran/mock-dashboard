@@ -618,6 +618,7 @@ export default function HallLayoutsPage() {
 					<DialogFooter>
 						<Button
 							variant="outline"
+							size="lg"
 							onClick={() => setSelectedLayout(null)}
 						>
 							{t("common.close")}
