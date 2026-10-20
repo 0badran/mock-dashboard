@@ -10,16 +10,29 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { useTheme } from "@/contexts/ThemeContext";
-import { Bell, CheckCheck, Globe, Menu, Moon, Search, Sun } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
+import { LanguageSwitcher } from "@/components/shared/LanguageSwitcher";
+import { Bell, CheckCheck, LogOut, Menu, Moon, Search, Settings, Sun, UserCheck } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { toast } from "sonner";
 
 export function DashboardHeader({ onMenuClick }: { onMenuClick: () => void }) {
 	const { t } = useTranslation();
-	const { theme, toggleTheme, language, setLanguage } = useTheme();
+	const navigate = useNavigate();
+	const { theme, toggleTheme } = useTheme();
+	const { user, logout } = useAuth();
 	const [searchValue, setSearchValue] = useState("");
+
+	const handleLogout = () => {
+		logout();
+		navigate("/login");
+	};
+
+	const userInitials = user?.name
+		? user.name.slice(0, 2).toUpperCase()
+		: "AB";
 
 	return (
 		<header className="sticky top-0 z-30 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-2 py-3 px-1">
@@ -49,27 +62,7 @@ export function DashboardHeader({ onMenuClick }: { onMenuClick: () => void }) {
 			{/* End: Actions (Language, Theme, Notifications, User) */}
 			<div className="flex items-center gap-1.5 sm:gap-2 self-end md:self-auto">
 				{/* Language Switcher Dropdown */}
-				<DropdownMenu modal={false}>
-					<DropdownMenuTrigger asChild>
-						<Button
-							variant="ghost"
-							size="icon"
-							title={language === "ar" ? "العربية" : "English"}
-						>
-							<Globe className="size-5" />
-						</Button>
-					</DropdownMenuTrigger>
-					<DropdownMenuContent>
-						<DropdownMenuLabel>{t("settings.language")}</DropdownMenuLabel>
-						<DropdownMenuSeparator />
-						<DropdownMenuItem onClick={() => setLanguage("ar")}>
-							عربي
-						</DropdownMenuItem>
-						<DropdownMenuItem onClick={() => setLanguage("en")}>
-							English
-						</DropdownMenuItem>
-					</DropdownMenuContent>
-				</DropdownMenu>
+				<LanguageSwitcher />
 
 				{/* Theme Toggle Button */}
 				<Button
@@ -163,25 +156,60 @@ export function DashboardHeader({ onMenuClick }: { onMenuClick: () => void }) {
 					</DropdownMenuContent>
 				</DropdownMenu>
 
-				{/* User Profile Capsule */}
-				<Link
-					to="/settings"
-					className="flex items-center gap-3 p-1 md:ps-2 lg:ps-3 text-start bg-card rounded-md group/user cursor-pointer hover:bg-primary hover:gradient-primary hover:text-primary-foreground hover:border-transparent transition-all border border-border/40"
-				>
-					<div className="flex-1 min-w-0 max-md:hidden">
-						<p className="text-sm font-bold truncate text-foreground group-hover/user:text-primary-foreground transition-colors">
-							{t("header.userName")}
-						</p>
-						<p className="text-xs truncate text-muted-foreground group-hover/user:text-primary-foreground/80 transition-colors">
-							guest@luna.demo
-						</p>
-					</div>
-					<Avatar className="size-9">
-						<AvatarFallback className="gradient-primary text-primary-foreground text-xs font-semibold group-hover/user:bg-white/20 group-hover/user:text-white transition-colors">
-							AB
-						</AvatarFallback>
-					</Avatar>
-				</Link>
+				{/* User Profile Dropdown */}
+				<DropdownMenu modal={false}>
+					<DropdownMenuTrigger asChild>
+						<button
+							type="button"
+							className="flex items-center gap-3 p-1 md:ps-2 lg:ps-3 text-start bg-card rounded-md group/user cursor-pointer hover:bg-muted transition-all border border-border/40 outline-none"
+						>
+							<div className="flex-1 min-w-0 max-md:hidden">
+								<p className="text-sm font-bold truncate text-foreground">
+									{user?.name || t("auth.guestUser")}
+								</p>
+								<p className="text-xs truncate text-muted-foreground">
+									{user?.email || "guest@luna.demo"}
+								</p>
+							</div>
+							<Avatar className="size-9">
+								<AvatarFallback className="gradient-primary text-primary-foreground text-xs font-semibold">
+									{userInitials}
+								</AvatarFallback>
+							</Avatar>
+						</button>
+					</DropdownMenuTrigger>
+					<DropdownMenuContent align="end" className="w-56">
+						<DropdownMenuLabel className="font-normal">
+							<div className="flex flex-col space-y-1">
+								<p className="text-sm font-bold leading-none">{user?.name || t("auth.guestUser")}</p>
+								<p className="text-xs leading-none text-muted-foreground">
+									{user?.email || "guest@luna.demo"}
+								</p>
+							</div>
+						</DropdownMenuLabel>
+						<DropdownMenuSeparator />
+						<DropdownMenuItem asChild>
+							<Link to="/settings" className="flex items-center gap-2 cursor-pointer">
+								<Settings className="size-4" />
+								<span>{t("sidebar.settings")}</span>
+							</Link>
+						</DropdownMenuItem>
+						<DropdownMenuItem asChild>
+							<Link to="/login" className="flex items-center gap-2 cursor-pointer">
+								<UserCheck className="size-4" />
+								<span>{t("auth.loginTitle")}</span>
+							</Link>
+						</DropdownMenuItem>
+						<DropdownMenuSeparator />
+						<DropdownMenuItem
+							onClick={handleLogout}
+							className="text-destructive focus:text-destructive flex items-center gap-2 cursor-pointer"
+						>
+							<LogOut className="size-4" />
+							<span>{t("auth.logout")}</span>
+						</DropdownMenuItem>
+					</DropdownMenuContent>
+				</DropdownMenu>
 			</div>
 		</header>
 	);

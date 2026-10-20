@@ -18,11 +18,18 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
         link: "text-primary underline-offset-4 hover:underline",
+        guest:
+          "bg-primary/10 hover:bg-primary/20 text-primary border border-primary/25 font-semibold shadow-xs",
+        pill:
+          "rounded-full border border-border bg-background hover:bg-muted text-foreground",
       },
       size: {
         default:
           "h-9 md:h-10 gap-2 px-4 text-sm font-medium rounded-lg has-data-[icon=inline-end]:pe-3 has-data-[icon=inline-start]:ps-3",
+        sm: "h-8 gap-1.5 px-3 text-xs font-medium rounded-md",
         icon: "size-8 md:size-9 rounded-lg",
+        lg: "h-11 md:h-12 w-full gap-2 px-6 text-base font-semibold rounded-xl",
+        full: "h-10 w-full gap-2 px-4 text-sm font-semibold rounded-lg",
       },
     },
     defaultVariants: {

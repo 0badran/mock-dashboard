@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter } from "react-router";
 import { LucideProvider } from "lucide-react";
 import { ThemeProvider } from "@/contexts/ThemeContext";
+import { AuthProvider } from "@/contexts/AuthContext";
 import "@fontsource-variable/inter";
 import "@fontsource/almarai/300.css";
 import "@fontsource/almarai/400.css";
@@ -16,15 +17,17 @@ import App from "./App.tsx";
 const queryClient = new QueryClient();
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <ThemeProvider>
-      <LucideProvider strokeWidth={1.5}>
-        <QueryClientProvider client={queryClient}>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        </QueryClientProvider>
-      </LucideProvider>
-    </ThemeProvider>
-  </StrictMode>,
+	<StrictMode>
+		<ThemeProvider>
+			<AuthProvider>
+				<LucideProvider strokeWidth={1.5}>
+					<QueryClientProvider client={queryClient}>
+						<BrowserRouter>
+							<App />
+						</BrowserRouter>
+					</QueryClientProvider>
+				</LucideProvider>
+			</AuthProvider>
+		</ThemeProvider>
+	</StrictMode>,
 );

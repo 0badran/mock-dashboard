@@ -21,6 +21,8 @@ const cardVariants = cva(
           "bg-card shadow-[0_2px_8px_0_rgb(0,0,0,.07)] border-s-[3px] hover:shadow-[0_4px_16px_0_rgb(0,0,0,.10)] hover:-translate-y-0.5",
         glow:
           "bg-card border-primary/20 shadow-[0_0_0_1px_hsl(var(--primary)/0.15),0_4px_20px_0_hsl(var(--primary)/0.12)] hover:shadow-[0_0_0_1px_hsl(var(--primary)/0.25),0_8px_32px_0_hsl(var(--primary)/0.20)] hover:-translate-y-0.5",
+        auth:
+          "bg-card/90 backdrop-blur-xl border-border/60 shadow-[0_12px_40px_-12px_hsl(var(--primary)/0.12)] dark:bg-card/80 dark:border-border/40",
       },
     },
     defaultVariants: {

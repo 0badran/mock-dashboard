@@ -18,12 +18,33 @@ import AdminAssistantsPage from "@/pages/AdminAssistantsPage";
 import MemoriesPage from "@/pages/MemoriesPage";
 import LookupsPage from "@/pages/LookupsPage";
 import SettingsPage from "@/pages/SettingsPage";
+import LoginPage from "@/pages/LoginPage";
 import NotFound from "@/pages/NotFound";
+import { useAuth } from "@/contexts/AuthContext";
+
+function ProtectedRoute({ children }: { children: React.ReactNode }) {
+	const { isAuthenticated } = useAuth();
+	if (!isAuthenticated) {
+		return <Navigate to="/login" replace />;
+	}
+	return <>{children}</>;
+}
 
 export default function App() {
 	return (
 		<Routes>
-			<Route element={<DashboardLayout />}>
+			{/* Authentication */}
+			<Route path="/login" element={<LoginPage />} />
+			<Route path="/register" element={<Navigate to="/login" replace />} />
+			<Route path="/signup" element={<Navigate to="/login" replace />} />
+
+			<Route
+				element={
+					<ProtectedRoute>
+						<DashboardLayout />
+					</ProtectedRoute>
+				}
+			>
 				{/* Core Dashboard */}
 				<Route path="/" element={<DashboardPage />} />
 				<Route path="/client/dashboard" element={<Navigate to="/" replace />} />
